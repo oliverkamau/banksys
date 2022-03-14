@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="pages/home/home">
+<head>
+
+    <script th:src=" @{/resources/custom/accounts/accounts.js}"></script>
+
+</head>
+<body>
+<div class="row container-fluid mx-2" layout:fragment="content">
+    <div class="col-md-11 col-sm-11 mb-4">
+
+        <h4 class="text-muted">Account Details</h4>
+
+
+        <input type="button" id="saveAccount" class="btn btn-outline-primary mr-3 ml-2 pull-right" value="Save">
+
+        <input type="button" id="newAccount" class="btn btn-outline-secondary mr-1 ml-2 pull-right" value="New">
+
+
+    </div>
+
+
+    <div class="container-fluid">
+        <form id="account-form">
+
+            <input type="hidden" name="accountId" id="accountId">
+            <input type="hidden" name="username" id="username" th:value="${username}">
+
+            <div class="row">
+
+                <div class="col-md-5 col-sm-11">
+
+                    <div class="form-row mb-4">
+                        <label class="col-md-4 control-label" for="select">Account Type</label>
+                        <select name="accountType" id="accountType" class="form-control col-md-8">
+                            <option value="">Select Type</option>
+                            <option value="Savings Account">Savings Account</option>
+                            <option value="Salary/Remittance Account">Salary/Remittance Account</option>
+                            <option value="Fixed Deposits Account">Fixed Deposits Account</option>
+                            <option value="Group Savings Account">Group Savings Account</option>
+                            <option value="Biashara Account">Biashara Account</option>
+
+
+
+                        </select>
+                    </div>
+
+                    <div class="form-row mb-4">
+                        <label class="col-md-4 control-label" for="select">Account Name</label>
+                        <textarea name="accountName" id="accountName" class="form-control col-md-8" style="height: 6em"></textarea>
+
+                    </div>
+
+
+
+
+                    <div class="form-row mb-4">
+                        <label class="col-md-4 control-label" for="select">Account Number</label>
+                        <input name="accountNumber" type="text" id="accountNumber" class="form-control col-md-8" readonly>   </div>
+
+
+                    <div class="form-row mb-4">
+                        <label class="col-md-4 control-label" for="select">Description</label>
+                        <textarea name="description" id="description" class="form-control col-md-8" style="height: 6em"></textarea>
+
+
+
+                </div>
+
+                </div>
+
+                <div class="col-md-5 col-sm-11">
+
+                    <div class="form-row mb-4">
+                        <label class="col-md-5 control-label" for="select">Created on.</label>
+                        <h5 class="col-md-5 control-label text-muted" id="createdon"></h5>
+
+                </div>
+                    <div class="form-row mb-4">
+                        <label class="col-md-5 control-label" for="select">Status</label>
+                        <h5 class="col-md-5 control-label text-muted" id="status"></h5>
+                    </div>
+
+                    <div class="form-row mb-4">
+                        <label class="col-md-5 control-label" for="select">Account balance</label>
+                        <h5 class="col-md-5 control-label text-muted" id="balance"></h5>
+
+                    </div>
+
+
+
+
+
+
+                </div>
+
+
+            </div>
+        </form>
+
+        <div class="col-md-11 col-sm-11 ml-2 mt-2">
+
+            <div class="table-responsive">
+                <table class="table table-striped display responsive nowrap" id="accountTable">
+                    <thead>
+                    <tr>
+                        <th scope="col">Account Type</th>
+                        <th scope="col">Account Name</th>
+                        <th scope="col">Account Number</th>
+                        <th>Status</th>
+                        <th scope="col">Balance</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

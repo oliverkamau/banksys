@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="pages/home/home">
+<head>
+    <script th:src=" @{/resources/custom/accounts/numbertowordconvertconvert.js}"></script>
+
+    <script th:src=" @{/resources/custom/accounts/deposit.js}"></script>
+
+</head>
+<body>
+<div class="row container-fluid mx-2" layout:fragment="content">
+    <div class="col-md-11 col-sm-11 mb-4">
+
+        <h4 class="text-muted">Deposit Money</h4>
+
+
+        <input type="button" id="deposit" class="btn btn-outline-primary mr-3 ml-2 pull-right" value="Deposit">
+
+        <input type="button" id="clear" class="btn btn-outline-primary mr-3 ml-2 pull-right" value="Clear">
+
+
+    </div>
+
+
+    <div class="container-fluid">
+        <form id="deposit-form">
+
+            <input type="hidden" name="transactionCode" id="transactionId">
+            <input type="hidden" name="username" id="username" th:value="${username}">
+
+            <div class="row">
+
+                <div class="col-md-8 col-sm-11">
+
+                    <div class="form-row mb-4">
+                        <label class="col-md-2 control-label" for="select">Account</label>
+                        <input type="hidden" name="depositAccount" id="depositAccount">
+                        <select id="account_sel" class="form-control col-md-8">
+                        </select>
+                    </div>
+
+
+                    <div class="form-row mb-4">
+                        <label class="col-md-2 control-label" for="select">Balance</label>
+                        <input type="hidden" name="balanceCf"id="balanceCf">
+                        <h6 class="col-md-5 control-label text-success" id="balance"></h6>
+
+                    </div>
+
+                    <div class="form-row mb-4">
+                        <label class="col-md-2 control-label" for="select">Amount</label>
+                        <input type="number" name="amount" class="col-md-5 form-control text-success" id="amount">
+
+                    </div>
+
+                    <div class="form-row mb-4">
+                        <label class="col-md-2 control-label" for="select">Total</label>
+                        <input type="hidden" name="totalCf"id="totalCf">
+                        <h6 class="col-md-5 control-label text-success" id="total"></h6>
+
+                    </div>
+
+                    <div class="form-row mb-4">
+                        <label class="col-md-2 control-label" for="select">Wording</label>
+
+                        <textarea name="wording" id="wording" class="form-control col-md-8" style="height: 6em" readonly></textarea>
+
+
+                    </div>
+
+                    <div class="form-row mb-4">
+                        <label class="col-md-2 control-label" for="select">Date Transacted</label>
+                        <h6 class="col-md-5 control-label text-success" id="transDate"></h6>
+
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+        </form>
+
+        <div class="col-md-11 col-sm-11 ml-2 mt-2">
+
+            <div class="table-responsive">
+                <table class="table table-striped display responsive nowrap" id="transTable">
+                    <thead>
+                    <tr>
+                        <th scope="col">Transaction Type</th>
+                        <th scope="col">Account</th>
+                        <th scope="col">Amount Transacted</th>
+                        <th scope="col">Balance</th>
+                        <th scope="col">Transcode</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

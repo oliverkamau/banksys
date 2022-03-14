@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="pages/home/home">
+<head>
+
+    <script th:src=" @{/resources/custom/users/profile.js}"></script>
+
+</head>
+<body>
+<div class="row container-fluid mx-2" layout:fragment="content">
+    <div class="col-md-11 col-sm-11 mb-4">
+
+        <h4 class="text-muted">Customer Details</h4>
+
+
+        <input type="button" id="saveCustomer" class="btn btn-outline-primary mr-3 ml-2 pull-right" value="Save">
+
+
+
+    </div>
+
+
+    <div class="container-fluid">
+        <form id="bankUsers-form">
+
+            <input type="hidden" name="userId" id="userId">
+            <div class="row">
+
+                <div class="col-md-4 col-sm-11">
+                    <div class="form-row mb-4">
+                        <label class="col-md-4 control-label" for="select">Name</label>
+                        <input name="name" type="text" id="name" class="form-control col-md-8">   </div>
+
+
+                    <div class="form-row mb-4">
+                        <label class="col-md-4 control-label" for="select">Email</label>
+                        <input name="email" id="email" class="form-control col-md-8">
+                    </div>
+
+                    <div class="form-row mb-4">
+                        <label class="col-md-4 control-label" for="select">ID Number</label>
+                        <input name="idNo" type="text" id="idNo" class="form-control col-md-8">   </div>
+
+
+                    <div class="form-row mb-4">
+                        <label class="col-md-4 control-label" for="select">PIN No</label>
+                        <input name="pinNo" type="text" id="pinNo" class="form-control col-md-8">   </div>
+
+
+
+                    <div class="form-row mb-4">
+                        <label class="col-md-4 control-label" for="select">Phone No.</label>
+                        <input name="phoneNo" id="phoneNo" class="form-control col-md-8">
+                    </div>
+
+            </div>
+
+
+
+                <div class="col-md-3 col-sm-11">
+
+                    <div class="form-row mb-4 form-check">
+                        &nbsp;
+                    </div>
+
+                    <div class="form-row mb-2">
+                        <input type="file" name="file" id="bankUsers-avatar" class="form-control col-md-10">
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-3 col-sm-11">
+
+                    <div class="form-row mb-4">
+                        <label class="col-md-4 control-label" for="select">D.O.B</label>
+                        <input type="date" name="dob" id="date" class="form-control col-md-8">
+                    </div>
+                    <div class="form-row mb-4">
+                        <label class="col-md-4 control-label" for="select">Gender</label>
+                        <select name="gender" id="gender" class="form-control col-md-8">
+                            <option value="">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select></div>
+
+                    <div class="form-row mb-4">
+                        <label class="col-md-4 control-label" for="select">Postal Address</label>
+                        <textarea name="postalAddress" id="postalAddress" class="form-control col-md-8" style="height: 6em"></textarea>
+
+                    </div>
+
+                    <div class="form-row mb-4">
+                        <label class="col-md-4 control-label" for="select">Physical Address</label>
+                        <textarea name="physicalAddress" id="physicalAddress" class="form-control col-md-8" style="height: 6em"></textarea>
+
+                    </div>
+
+
+
+
+                </div>
+
+
+            </div>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

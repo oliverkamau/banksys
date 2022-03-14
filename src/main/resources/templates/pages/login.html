@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link th:href="@{/resources/bootstrap/css/bootstrap.css}" rel="stylesheet" type="text/css"/>
+
+
+    <link rel="stylesheet" th:href="@{/resources/css/login.css}" type="text/css"/>
+    <script th:src="@{/resources/js/jquery.js}" type="application/javascript"></script>
+    <script th:src="@{/resources/js/popper.js}" type="application/javascript"></script>
+    <script th:src="@{/resources/bootstrap/js/bootstrap.js}" type="application/javascript"></script>
+
+</head>
+<body class="my-login-page">
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 mx-auto">
+            <div id="first">
+                <div class="myform form ">
+                    <div class="logo mb-4">
+                        <div class="col-md-12 text-center">
+                            <h1 class="text-muted">BankSys</h1>
+                        </div>
+                    </div>
+
+                    <form th:action="@{/login}" method="post">
+                        <div class="form-group mb-3 mt-4">
+                            <label for="exampleInputEmail1">Username</label>
+                            <input type="text" name="username"  class="form-control" id="email" aria-describedby="emailHelp" placeholder="">
+                        </div>
+                        <div class="form-group mb-3 mt-3">
+                            <label for="exampleInputEmail1">Password</label>
+                            <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <p class="text-center">&nbsp;</p>
+                        </div>
+                        <div class="col-md-12 text-center mb-3">
+                            <button type="submit" class=" btn btn-block mybtn btn-primary tx-tfm">Login</button>
+                        </div>
+                        <div class="col-md-12 mb-3">
+
+                            <div th:if="${param.error}" class="alert alert-danger text-center">
+                                Invalid Username or Password!
+                            </div>
+
+                        </div>
+                        <div class="col-md-12 mb-3 mt-2">
+                            <p class="text-center">
+                                <a th:href="@{/register}" class="google btn mybtn"><i class="fa fa-key">
+                                </i> Don't Have Account Register?
+                                </a>
+                            </p>
+                        </div>
+                        <div class="form-group">
+                            <p class="text-center">©2022 All Rights Reserved</p>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

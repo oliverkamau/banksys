@@ -1,0 +1,138 @@
+
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title>BankSys</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" th:href="@{/resources/bootstrap/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/resources/font-awesome/css/font-awesome.min.css}">
+    <link rel="stylesheet" th:href="@{/resources/datatables/css/datatablesbootstrap.css}">
+
+    <link rel="stylesheet" th:href="@{/resources/datatables/css/datatablesresponsive.css}">
+    <link rel="stylesheet" th:href="@{/resources/sweetalert/sweetalert.css}">
+    <link rel="stylesheet" th:href="@{/resources/filecontrol/css/fileinput.css}">
+
+    <link rel="stylesheet" th:href="@{/resources/select2/css/select2.css}">
+    <link rel="stylesheet" th:href="@{/resources/select2/css/select2.css}">
+    <link rel="stylesheet" th:href="@{/resources/css/main.css}">
+    <script th:src="@{/resources/js/jquery.js}"></script>
+    <script th:src="@{/resources/js/popper.js}"></script>
+    <script th:src="@{/resources/sweetalert/sweetalert.js}"></script>
+
+
+    <script th:src="@{/resources/bootstrap/js/bootstrap.js}"></script>
+    <script th:src="@{/resources/datatables/js/datatables.js}"></script>
+    <script th:src="@{/resources/datatables/js/datatablesbootstrap.js}"></script>
+
+    <script th:src="@{/resources/datatables/js/datatablebuttons.js}"></script>
+    <script th:src="@{/resources/datatables/js/datatableresponsive.js}"></script>
+    <script th:src="@{/resources/datatables/js/datatablescroller.js}"></script>
+    <script th:src="@{/resources/filecontrol/js/fileinput.js}"></script>
+
+
+    <script th:src="@{/resources/select2/js/select2.js}"></script>
+    <script th:src="@{/resources/js/bootbox.min.js}"></script>
+    <script th:src="@{/resources/custom/base.js}"></script>
+
+</head>
+<body>
+<div class="wrapper">
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h1>BankSys</h1>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li>
+                <a href="#setupsSubMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span><i class="fa fa-cogs"></i></span>Configs</a>
+                <ul class="collapse list-unstyled" id="setupsSubMenu">
+                    <li>
+                        <a th:href="@{/protected/profile}">Profile</a>
+                    </li>
+                    <li>
+                        <a href="#">Change Password</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Lock Account</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Payment Modes</a>
+                    </li>
+
+                </ul>
+            </li>
+            <li>
+                <a href="#userSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span><i class="fa fa-university"></i></span>Bank Operations</a>
+                <ul class="collapse list-unstyled" id="userSubmenu">
+                    <li>
+                        <a th:href="@{/protected/accounts/newaccount}">Open Account</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/protected/accounts/depositscreen}">Deposit</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/protected/accounts/withdrawscreen}">Withdraw</a>
+                    </li>
+                    <li>
+                    <a th:href="@{/protected/accounts/transferscreen}">Money Transfer</a>
+
+                   </li>
+                    <li>
+                        <a th:href="@{/protected/accounts/transactionhistory}">Transaction History</a>
+
+                    </li>
+
+
+                </ul>
+            </li>
+            <li>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><span><i class="fa fa-question"></i></span>Help</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a href="#">Make an Enquiry</a>
+                    </li>
+                    <li>
+                        <a  href="#">Help Center</a>
+                    </li>
+                    <li>
+                        <a href="#">User Guide</a>
+                    </li>
+                    <li>
+                        <a href="#">FAQs</a>
+                    </li>
+
+
+                </ul>
+            </li>
+
+        </ul>
+    </nav>
+
+    <div id="content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid mr-4">
+                <button type="button" id="sidebarCollapse" class="btn btn-muted">
+                    <i class="fa fa-bars" style="font-size:27px"></i>
+                </button>
+                <div class="mr-4">
+                    <a class="pull-right mr-4" th:href="@{/logout}"><i class="fa fa-sign-out"></i>Logout</a>
+                </div>
+            </div>
+        </nav>
+        <br>
+        <div layout:fragment="content">
+
+        </div>
+
+
+    </div>
+</div>
+
+
+
+</body>
+</html>

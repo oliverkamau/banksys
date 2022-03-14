@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Register</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link th:href="@{/resources/bootstrap/css/bootstrap.css}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" th:href="@{/resources/sweetalert/sweetalert.css}">
+
+
+    <link rel="stylesheet" th:href="@{/resources/css/login.css}" type="text/css"/>
+    <script th:src="@{/resources/js/jquery.js}" type="application/javascript"></script>
+    <script th:src="@{/resources/js/popper.js}" type="application/javascript"></script>
+    <script th:src="@{/resources/bootstrap/js/bootstrap.js}" type="application/javascript"></script>
+    <script th:src="@{/resources/sweetalert/sweetalert.js}"></script>
+
+    <script th:src="@{/resources/custom/users/register.js}" type="application/javascript"></script>
+
+</head>
+<body class="my-login-page">
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 mx-auto">
+            <div id="first">
+                <div class="myform form ">
+                    <div class="logo mb-4">
+                        <div class="col-md-12 text-center">
+                            <h1 class="text-muted">Register</h1>
+                        </div>
+                    </div>
+
+                    <form id="register-form" method="post">
+                        <div class="form-group mb-3 mt-4">
+                            <label for="exampleInputEmail1">Name</label>
+                            <input type="text" name="name"  class="form-control" id="name" aria-describedby="nameHelp" placeholder="">
+                        </div>
+                        <div class="form-group mb-3 mt-3">
+                            <label for="exampleInputEmail1">Email</label>
+                            <input type="text" name="email" id="email"  class="form-control" aria-describedby="emailHelp" placeholder="">
+                        </div>
+                        <div class="form-group mb-3 mt-3">
+                            <label for="exampleInputEmail1">Username</label>
+                            <input type="text" name="username" id="username"  class="form-control" aria-describedby="emailHelp" placeholder="">
+                        </div>
+                        <div class="form-group mb-3 mt-3">
+                            <label for="exampleInputEmail1">Password</label>
+                            <input type="password" name="password" id="password"  class="form-control" aria-describedby="emailHelp" placeholder="">
+                        </div>
+                        <div class="form-group mb-3 mt-3">
+                            <label for="exampleInputEmail1">Confirm Password</label>
+                            <input type="password" name="confirmPassword" id="confirmPass"  class="form-control" aria-describedby="emailHelp" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <p class="text-center">&nbsp;</p>
+                        </div>
+                        <div class="col-md-12 text-center mb-3">
+                            <button type="button" id="register" class=" btn btn-block mybtn btn-primary tx-tfm">Register</button>
+                        </div>
+                        <div class="col-md-12 mb-3">
+
+                            <div th:if="${param.error}" class="alert alert-danger text-center">
+                                Invalid Username or Password!
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <p class="text-center">©2022 All Rights Reserved</p>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
